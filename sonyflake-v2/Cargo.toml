@@ -1,0 +1,23 @@
+# Port of the Go module github.com/sony/sonyflake/v2.
+[package]
+name = "sonyflake-v2"
+description = "A distributed unique ID generator inspired by Twitter's Snowflake"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lib]
+name = "sonyflake_v2"
+path = "src/lib.rs"
+
+[dependencies]
+chrono.workspace = true
+libc.workspace = true
+
+# Named with a -v2 suffix because cargo writes every workspace example into one
+# shared output directory, where a bare `sonyflake_server` would collide with v1's.
+[[example]]
+name = "sonyflake_server_v2"
+path = "examples/sonyflake_server_v2.rs"

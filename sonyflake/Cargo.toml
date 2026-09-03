@@ -1,0 +1,17 @@
+# Port of the Go module github.com/sony/sonyflake (v1).
+[package]
+name = "sonyflake"
+description = "A distributed unique ID generator inspired by Twitter's Snowflake"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+chrono.workspace = true
+libc.workspace = true
+
+[[example]]
+name = "sonyflake_server"
+path = "examples/sonyflake_server.rs"

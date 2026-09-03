@@ -1,0 +1,17 @@
+# Workspace mirroring the two Go modules of github.com/sony/sonyflake:
+#   sonyflake     <- github.com/sony/sonyflake      (v1)
+#   sonyflake-v2  <- github.com/sony/sonyflake/v2   (v2)
+[workspace]
+resolver = "2"
+members = ["sonyflake", "sonyflake-v2"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.80"
+license = "MIT"
+repository = "https://github.com/sony/sonyflake"
+
+[workspace.dependencies]
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+libc = "0.2"
